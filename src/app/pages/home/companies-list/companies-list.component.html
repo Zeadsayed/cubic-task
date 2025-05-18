@@ -1,5 +1,5 @@
-<div class="container py-5">
-    <h2 class="mb-4 text-center">{{ 'USERS.TITLE'| translate}}</h2>
+<div class="container py-2">
+    <h2 class="mb-4">{{ 'USERS.TITLE'| translate}}</h2>
 
     <div *ngIf="uiState.isLoading" class="text-center">
         <div class="spinner-border text-primary" role="status"></div>
@@ -38,7 +38,7 @@
                         <td>{{ user.address }}, {{ user.state }} {{ user.zip }}</td>
                         <td>{{ user.country }}</td>
                         <td>
-                            <button class="btn btn-sm btn-outline-primary" [routerLink]="['details', user.id]">
+                            <button class="btn btn-sm btn-outline-primary" [routerLink]="['/details', user.id]">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                             </button>
                         </td>

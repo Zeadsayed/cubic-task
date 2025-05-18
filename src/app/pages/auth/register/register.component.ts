@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     previewImages: [] as any,
   };
   uiState = {
-    imgSrc: `../../../../assets/images/register.svg`,
+    imgSrc: `assets/images/register.svg`,
     isLoading: false,
   };
 
