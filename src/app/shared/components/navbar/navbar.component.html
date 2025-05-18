@@ -1,8 +1,12 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between">
 
-        <a class="navbar-brand" href="#">CUBIC</a>
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand" routerLink="/">CUBIC</a>
+            <a class="nav-link d-inline-block ms-3 me-3" aria-current="page" routerLink="home"
+                routerLinkActive="active">{{'HOME' | translate}}</a>
 
+        </div>
         <button (click)="toggleLang()" class="btn btn-outline-primary">
             <i class="fa fa-globe" aria-hidden="true"></i> {{ languageService.getCurrentLanguage() === 'en' ?
             'Ar' : 'En' }}

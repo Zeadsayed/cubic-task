@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegisterComponent } from './register.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { CompaniesListComponent } from './companies-list.component';
 
-export const routes: Routes = [
-  { path: 'sign-up', component: RegisterComponent },
-];
+export const routes: Routes = [{ path: '', component: CompaniesListComponent }];
 
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [CompaniesListComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -19,4 +17,4 @@ export const routes: Routes = [
     TranslateModule,
   ],
 })
-export class RegisterModule {}
+export class CompaniesListModule {}

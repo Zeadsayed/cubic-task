@@ -1,0 +1,50 @@
+<div class="container py-5">
+    <h2 class="mb-4 text-center">{{ 'USERS.TITLE'| translate}}</h2>
+
+    <div *ngIf="uiState.isLoading" class="text-center">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    <div *ngIf="uiState.error" class="alert alert-danger">
+        {{ uiState.error }}
+    </div>
+
+    <div *ngIf="!uiState.isLoading && state.users.length">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Company</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Country</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of state.users">
+                        <td>
+                            <img [src]="user.photo" alt="photo" width="60" height="60" class="rounded-circle border" />
+                        </td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.company }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>{{ user.address }}, {{ user.state }} {{ user.zip }}</td>
+                        <td>{{ user.country }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" [routerLink]="['details', user.id]">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
